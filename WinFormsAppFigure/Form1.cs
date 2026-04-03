@@ -4,67 +4,83 @@ using System.Windows.Forms;
 
 namespace WinFormsAppFigure
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form// Добавить на диаграмму
     {
+        // Ссылка на обьект фигуры
         private RectangleOrParallelepiped currentFigure;
         private FileManager Manager;
 
         public Form1()
         {
             InitializeComponent();
+
+            // Экземпляр класса фигуры
             currentFigure = new RectangleOrParallelepiped();
+
             Manager = new FileManager();
+
+            RectangleOrParallelepiped.Test();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                double l = double.Parse(textBox1.Text);
-                double w = double.Parse(textBox2.Text);
+                labelError.Text = "";
 
+                double l = double.Parse(textBoxlength.Text);
+                double w = double.Parse(textBoxwidth.Text);
+                // WFAF очень старый, WPF MAUI
                 currentFigure.SetFigL(l);
                 currentFigure.SetFigW(w);
 
-                if (!string.IsNullOrWhiteSpace(textBox3.Text))
+                if (!string.IsNullOrWhiteSpace(textBoxheight.Text))
                 {
-                    double h = double.Parse(textBox3.Text);
+
+                    double h = double.Parse(textBoxheight.Text);
                     currentFigure.SetFigH(h);
 
-                    double surfaceArea = 2 * (l * w + l * h + w * h);
-                    textBox4.Text = surfaceArea.ToString("F2");
+                    textBoxperimeter.Text = currentFigure.GetTwodPerimeter().ToString("F2");
 
-                    textBox5.Text = (l * w * h).ToString("F2");
-                    label5.Text = "Объём";
+                    textBoxsquare.Text = currentFigure.GetTreedVolume().ToString("F2");
+
+                    labelsquare.Text = "Объём";
                 }
                 else
                 {
-                    double perimeter = 2 * (l + w);
-                    double area = l * w;
-                    textBox4.Text = area.ToString("F2");
-                    textBox5.Text = area.ToString("F2");
-                    label5.Text = "Площадь";
+                    textBoxperimeter.Text = currentFigure.GetTwodPerimeter().ToString("F2");
+
+                    textBoxsquare.Text = currentFigure.GetTwodArea().ToString("F2");
+
+                    labelsquare.Text = "Площадь";
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Введи числа правильно");
+                //MessageBox.Show("Введи числа правильно");// менее навязчивое
+                labelError.Text = "Ошибка: Введи числа правильно";
+
+            }
+
+            catch (ArgumentException ex)
+            {
+                labelError.Text = $"Ошибка: {ex.Message}";
             }
         }
 
         private void button2_Click(object sender, EventArgs e) // Квадрат
         {
             ClearAll();
-            textBox1.Text = "5";
-            textBox2.Text = "5";
+            textBoxwidth.Text = "5";
+            textBoxlength.Text = "5";
         }
 
         private void button3_Click(object sender, EventArgs e) // Куб
         {
             ClearAll();
-            textBox1.Text = "5";
-            textBox2.Text = "5";
-            textBox3.Text = "5";
+            textBoxwidth.Text = "5";
+            textBoxheight.Text = "5";
+            textBoxlength.Text = "5";
         }
 
         private void button4_Click(object sender, EventArgs e) // Очистить
@@ -74,12 +90,12 @@ namespace WinFormsAppFigure
 
         private void ClearAll()
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            label5.Text = "Площадь/Объем";
+            textBoxwidth.Clear();
+            textBoxheight.Clear();
+            textBoxlength.Clear();
+            textBoxperimeter.Clear();
+            textBoxsquare.Clear();
+            labelsquare.Text = "Площадь/Объем";
         }
 
         // Обработка кнопки выхода
@@ -107,7 +123,12 @@ namespace WinFormsAppFigure
         // Обработка кнопки загрузки данных из файла
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Manager.LoadElements(currentFigure, textBox1, textBox2, textBox3);
+            Manager.LoadElements(currentFigure, textBoxwidth, textBoxheight, textBoxlength);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsAppFigure
 {
+    // Название класса Прямоугольник Или Параллелепипед
     internal class RectangleOrParallelepiped
     {
         private double width;  // ширина
@@ -50,7 +51,7 @@ namespace WinFormsAppFigure
             }
             else
             {
-                Console.WriteLine("Ширина должна быть положительной.");
+                throw new ArgumentException("Ширина должна быть положительной");
             }
         }
 
@@ -63,7 +64,7 @@ namespace WinFormsAppFigure
             }
             else
             {
-                Console.WriteLine("Высота должна быть неотрицательной.");
+                throw new ArgumentException("Высота должна быть неотрицательной");
             }
         }
 
@@ -76,7 +77,7 @@ namespace WinFormsAppFigure
             }
             else
             {
-                Console.WriteLine("Длина должна быть положительной.");
+                throw new ArgumentException("Длина должна быть положительной");
             }
         }
 
@@ -100,5 +101,41 @@ namespace WinFormsAppFigure
 
         // Метод нахождения объёма параллелепипеда
         public double GetTreedVolume() => width * length * height;
+
+        public static void Test()// статический метод
+        {
+            try
+            {
+                // Тест конструктора с некорректными отрицательными значениями
+                var bedtest = new RectangleOrParallelepiped(-3, -4, -2);
+                System.Diagnostics.Debug.Assert(bedtest.GetWidth() == 0);
+                System.Diagnostics.Debug.Assert(bedtest.GetHeight() == 0);
+                System.Diagnostics.Debug.Assert(bedtest.GetLength() == 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка валидации: {ex.Message}");
+            }
+
+            var twotest = new RectangleOrParallelepiped(5, 5, 0);
+            var treetest = new RectangleOrParallelepiped(5, 5, 5);
+
+            var twotest1 = new RectangleOrParallelepiped(3.5, 7.25, 0);
+            var treetest1 = new RectangleOrParallelepiped(4.37, 0.5, 1.9); 
+
+            System.Diagnostics.Debug.Assert(twotest.GetWidth() == 5);
+            System.Diagnostics.Debug.Assert(twotest.GetHeight() == 0);
+            System.Diagnostics.Debug.Assert(twotest.GetLength() == 5);
+            System.Diagnostics.Debug.Assert(twotest.GetTwodPerimeter() == 20);
+            System.Diagnostics.Debug.Assert(twotest.GetTwodArea() == 25);
+
+            System.Diagnostics.Debug.Assert(treetest.GetWidth() == 5);
+            System.Diagnostics.Debug.Assert(treetest.GetHeight() == 5);
+            System.Diagnostics.Debug.Assert(treetest.GetLength() == 5);
+
+            //MessageBox.Show("Все тесты прошли успешно!");// Убрать
+            // Тесты работают в более фоновом режиме
+        }
+
     }
 }

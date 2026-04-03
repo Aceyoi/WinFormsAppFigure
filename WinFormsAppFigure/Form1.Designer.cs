@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBox4 = new TextBox();
-            label4 = new Label();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            textBox5 = new TextBox();
-            label5 = new Label();
+            buttoncalculate = new Button();
+            textBoxwidth = new TextBox();
+            textBoxheight = new TextBox();
+            textBoxlength = new TextBox();
+            labelwidth = new Label();
+            labelheight = new Label();
+            labellength = new Label();
+            textBoxperimeter = new TextBox();
+            labelperimeter = new Label();
+            ButtonFillRectangle = new Button();
+            ButtonFillingParallelepiped = new Button();
+            buttoncleaning = new Button();
+            textBoxsquare = new TextBox();
+            labelsquare = new Label();
             menuStrip1 = new MenuStrip();
             сохранитьОтветToolStripMenuItem = new ToolStripMenuItem();
             файлToolStripMenuItem1 = new ToolStripMenuItem();
@@ -53,128 +53,129 @@
             сохранитьДанныеToolStripMenuItem = new ToolStripMenuItem();
             заToolStripMenuItem = new ToolStripMenuItem();
             выходToolStripMenuItem1 = new ToolStripMenuItem();
+            labelError = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // buttoncalculate
             // 
-            button1.Location = new Point(12, 239);
-            button1.Name = "button1";
-            button1.Size = new Size(144, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Вычислить";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttoncalculate.Location = new Point(12, 239);
+            buttoncalculate.Name = "buttoncalculate";
+            buttoncalculate.Size = new Size(144, 23);
+            buttoncalculate.TabIndex = 0;
+            buttoncalculate.Text = "Вычислить";
+            buttoncalculate.UseVisualStyleBackColor = true;
+            buttoncalculate.Click += button1_Click;
             // 
-            // textBox1
+            // textBoxwidth
             // 
-            textBox1.Location = new Point(12, 152);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
+            textBoxwidth.Location = new Point(12, 152);
+            textBoxwidth.Name = "textBoxwidth";
+            textBoxwidth.Size = new Size(100, 23);
+            textBoxwidth.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxheight
             // 
-            textBox2.Location = new Point(12, 181);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 2;
+            textBoxheight.Location = new Point(12, 181);
+            textBoxheight.Name = "textBoxheight";
+            textBoxheight.Size = new Size(100, 23);
+            textBoxheight.TabIndex = 2;
             // 
-            // textBox3
+            // textBoxlength
             // 
-            textBox3.Location = new Point(12, 210);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 3;
+            textBoxlength.Location = new Point(12, 210);
+            textBoxlength.Name = "textBoxlength";
+            textBoxlength.Size = new Size(100, 23);
+            textBoxlength.TabIndex = 3;
             // 
-            // label1
+            // labelwidth
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(118, 155);
-            label1.Name = "label1";
-            label1.Size = new Size(52, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Ширина";
+            labelwidth.AutoSize = true;
+            labelwidth.Location = new Point(118, 155);
+            labelwidth.Name = "labelwidth";
+            labelwidth.Size = new Size(52, 15);
+            labelwidth.TabIndex = 4;
+            labelwidth.Text = "Ширина";
             // 
-            // label2
+            // labelheight
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(118, 189);
-            label2.Name = "label2";
-            label2.Size = new Size(47, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Высота";
+            labelheight.AutoSize = true;
+            labelheight.Location = new Point(118, 189);
+            labelheight.Name = "labelheight";
+            labelheight.Size = new Size(47, 15);
+            labelheight.TabIndex = 5;
+            labelheight.Text = "Высота";
             // 
-            // label3
+            // labellength
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(118, 218);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Длина";
+            labellength.AutoSize = true;
+            labellength.Location = new Point(118, 218);
+            labellength.Name = "labellength";
+            labellength.Size = new Size(42, 15);
+            labellength.TabIndex = 6;
+            labellength.Text = "Длина";
             // 
-            // textBox4
+            // textBoxperimeter
             // 
-            textBox4.Location = new Point(118, 300);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 7;
+            textBoxperimeter.Location = new Point(118, 300);
+            textBoxperimeter.Name = "textBoxperimeter";
+            textBoxperimeter.Size = new Size(100, 23);
+            textBoxperimeter.TabIndex = 7;
             // 
-            // label4
+            // labelperimeter
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 303);
-            label4.Name = "label4";
-            label4.Size = new Size(63, 15);
-            label4.TabIndex = 8;
-            label4.Text = "Периметр";
+            labelperimeter.AutoSize = true;
+            labelperimeter.Location = new Point(12, 303);
+            labelperimeter.Name = "labelperimeter";
+            labelperimeter.Size = new Size(63, 15);
+            labelperimeter.TabIndex = 8;
+            labelperimeter.Text = "Периметр";
             // 
-            // button2
+            // ButtonFillRectangle
             // 
-            button2.Location = new Point(12, 52);
-            button2.Name = "button2";
-            button2.Size = new Size(188, 23);
-            button2.TabIndex = 9;
-            button2.Text = "Данные для прямоугольника";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ButtonFillRectangle.Location = new Point(12, 52);
+            ButtonFillRectangle.Name = "ButtonFillRectangle";
+            ButtonFillRectangle.Size = new Size(188, 23);
+            ButtonFillRectangle.TabIndex = 9;
+            ButtonFillRectangle.Text = "Данные для прямоугольника";
+            ButtonFillRectangle.UseVisualStyleBackColor = true;
+            ButtonFillRectangle.Click += button2_Click;
             // 
-            // button3
+            // ButtonFillingParallelepiped
             // 
-            button3.Location = new Point(12, 81);
-            button3.Name = "button3";
-            button3.Size = new Size(188, 23);
-            button3.TabIndex = 10;
-            button3.Text = "Данные для параллелепипеда";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            ButtonFillingParallelepiped.Location = new Point(12, 81);
+            ButtonFillingParallelepiped.Name = "ButtonFillingParallelepiped";
+            ButtonFillingParallelepiped.Size = new Size(188, 23);
+            ButtonFillingParallelepiped.TabIndex = 10;
+            ButtonFillingParallelepiped.Text = "Данные для параллелепипеда";
+            ButtonFillingParallelepiped.UseVisualStyleBackColor = true;
+            ButtonFillingParallelepiped.Click += button3_Click;
             // 
-            // button4
+            // buttoncleaning
             // 
-            button4.Location = new Point(12, 110);
-            button4.Name = "button4";
-            button4.Size = new Size(188, 23);
-            button4.TabIndex = 11;
-            button4.Text = "Очистка";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            buttoncleaning.Location = new Point(12, 110);
+            buttoncleaning.Name = "buttoncleaning";
+            buttoncleaning.Size = new Size(188, 23);
+            buttoncleaning.TabIndex = 11;
+            buttoncleaning.Text = "Очистка";
+            buttoncleaning.UseVisualStyleBackColor = true;
+            buttoncleaning.Click += button4_Click;
             // 
-            // textBox5
+            // textBoxsquare
             // 
-            textBox5.Location = new Point(118, 329);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 12;
+            textBoxsquare.Location = new Point(118, 329);
+            textBoxsquare.Name = "textBoxsquare";
+            textBoxsquare.Size = new Size(100, 23);
+            textBoxsquare.TabIndex = 12;
             // 
-            // label5
+            // labelsquare
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(12, 332);
-            label5.Name = "label5";
-            label5.Size = new Size(102, 15);
-            label5.TabIndex = 13;
-            label5.Text = "Площадь/Объем";
+            labelsquare.AutoSize = true;
+            labelsquare.Location = new Point(12, 332);
+            labelsquare.Name = "labelsquare";
+            labelsquare.Size = new Size(102, 15);
+            labelsquare.TabIndex = 13;
+            labelsquare.Text = "Площадь/Объем";
             // 
             // menuStrip1
             // 
@@ -249,29 +250,38 @@
             выходToolStripMenuItem1.Size = new Size(180, 22);
             выходToolStripMenuItem1.Text = "Выход";
             // 
+            // labelError
+            // 
+            labelError.AutoSize = true;
+            labelError.Location = new Point(12, 274);
+            labelError.Name = "labelError";
+            labelError.Size = new Size(0, 15);
+            labelError.TabIndex = 15;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(276, 450);
+            Controls.Add(labelError);
             Controls.Add(menuStrip1);
-            Controls.Add(label5);
-            Controls.Add(textBox5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(label4);
-            Controls.Add(textBox4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(labelsquare);
+            Controls.Add(textBoxsquare);
+            Controls.Add(buttoncleaning);
+            Controls.Add(ButtonFillingParallelepiped);
+            Controls.Add(ButtonFillRectangle);
+            Controls.Add(labelperimeter);
+            Controls.Add(textBoxperimeter);
+            Controls.Add(labellength);
+            Controls.Add(labelheight);
+            Controls.Add(labelwidth);
+            Controls.Add(textBoxlength);
+            Controls.Add(textBoxheight);
+            Controls.Add(textBoxwidth);
+            Controls.Add(buttoncalculate);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
-            Text = "Form1";
+            Text = "RectangleOrParallelepiped";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -280,20 +290,20 @@
 
         #endregion
 
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox4;
-        private Label label4;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private TextBox textBox5;
-        private Label label5;
+        private Button buttoncalculate;
+        private TextBox textBoxwidth;
+        private TextBox textBoxheight;
+        private TextBox textBoxlength;
+        private Label labelwidth;
+        private Label labelheight;
+        private Label labellength;
+        private TextBox textBoxperimeter;
+        private Label labelperimeter;
+        private Button ButtonFillRectangle;
+        private Button ButtonFillingParallelepiped;
+        private Button buttoncleaning;
+        private TextBox textBoxsquare;
+        private Label labelsquare;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem сохранитьОтветToolStripMenuItem;
         private ToolStripMenuItem файлToolStripMenuItem;
@@ -305,5 +315,6 @@
         private ToolStripMenuItem сохранитьОтветToolStripMenuItem1;
         private ToolStripMenuItem загрузитьToolStripMenuItem;
         private ToolStripMenuItem выходToolStripMenuItem;
+        private Label labelError;
     }
 }
